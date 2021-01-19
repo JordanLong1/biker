@@ -20,14 +20,17 @@ function BikeTracker() {
 
     const mapIncidentsToList = () => {
         return filterByTitle().map(incident => {
+            console.log(incident)
             return (
                 <section key={incident.id}>
                 <div className='bike-img-container'>
                     <img src={incident.media.image_url} alt='Bike Img' />
                 </div>
-                <li>
-                    {incident.title}
-                </li>
+                <li>{incident.title} </li>
+                <li>{incident.description} </li>
+                <li>{incident.address} </li>
+
+
 
                 </section>
             )
