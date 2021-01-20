@@ -48,6 +48,7 @@ function BikeTracker() {
             <form>
             <label htmlFor='search'>Bike Search</label>
                 <input type='text' id='search' value={input} onChange={handleChange} />
+                <button>Insert Search Logo here</button>
             </form>
         </div>
         <ul>
