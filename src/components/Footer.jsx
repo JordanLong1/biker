@@ -35,7 +35,10 @@ function Footer() {
         </div>
         </div>
         </div>
-           
+           <div className='privacy-policy-section'>
+               <p>Privacy Policy</p>
+               <p>2021 Copyright Biker</p>
+           </div>
         </div>
     )
 }
