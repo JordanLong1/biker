@@ -20,11 +20,13 @@ width: 100%;
 
 .bike-detailed-row {
   width: 100%;
+  display: flex;
   background-color: rgb(242, 242, 242);
-
+  margin: 2%;
 }
 
 .bike-detailed-row li {
+  padding-left: 2%;
   list-style: none;
   
 }
