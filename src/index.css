@@ -25,6 +25,11 @@ width: 100%;
   margin: 2%;
 }
 
+.incident-title {
+  color: #3498db;
+  font-weight: bold;
+}
+
 .bike-detailed-row li {
   padding-left: 2%;
   list-style: none;
@@ -32,6 +37,7 @@ width: 100%;
 }
 
 .bike-detailed-row img {
+  box-shadow: 5px 5px 5px 5px rgba(0, 0,0,0.5);
 
   width: 15%;
 }
