@@ -24,9 +24,9 @@ function BikeTracker() {
                 <section className='bike-card-row' key={incident.id}>
                 <div className='bike-detailed-row'>
                     <img src={incident.media.image_url} alt='Bike Img' />
-                <li>{incident.title} </li>
-                <li>{incident.description} </li>
-                <li>{incident.address} </li>
+                <li className='incident-title'>{incident.title} </li>
+                <li className='incident-description'>Description: {incident.description} </li>
+                <li className='incident-address'>Address: {incident.address} </li>
                 </div>
                 </section>
             )
