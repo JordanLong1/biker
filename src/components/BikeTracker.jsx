@@ -24,10 +24,10 @@ function BikeTracker() {
                 <section className='bike-card-row' key={incident.id}>
                 <div className='bike-detailed-row'>
                     <img src={incident.media.image_url} alt='Bike Img' />
-                </div>
                 <li>{incident.title} </li>
                 <li>{incident.description} </li>
                 <li>{incident.address} </li>
+                </div>
                 </section>
             )
         })
