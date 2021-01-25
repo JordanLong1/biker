@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'; 
-
 function BikeTracker() {
 
     const [incidents, setIncidents] = useState([]); 
@@ -20,10 +19,14 @@ function BikeTracker() {
 
     const mapIncidentsToList = () => {
         return filterByTitle().map(incident => {
+            console.log(incident)
             return (
                 <section className='bike-card-row' key={incident.id}>
                 <div className='bike-detailed-row'>
+                    {incident.media.image_url === null ? <img src={'../images/bike.jpg'} alt='Default-Img'/> :
                     <img src={incident.media.image_url} alt='Bike Img' />
+                     }
+                   
                 <li className='incident-title'>{incident.title} </li>
                 <li className='incident-description'>Description: {incident.description} </li>
                 <li className='incident-address'>Address: {incident.address} </li>
