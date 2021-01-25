@@ -1,9 +1,13 @@
+/* eslint-disable import/no-named-as-default-member */
+/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable no-undef */
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+// eslint-disable-next-line import/no-named-as-default
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
