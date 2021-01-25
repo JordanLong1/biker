@@ -1,14 +1,18 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState, useEffect } from 'react';
+import DisplayCertainBike from './DisplayCertainBike';
 import bikeImg from '../images/bike.jpg';
 
 function BikeTracker() {
   const [incidents, setIncidents] = useState([]);
   const [input, setInput] = useState('');
-
+  const [showComponent, setShowComponent] = useState(false);
+  const [bikeClicked, setBikeClicked] = useState(null);
   const url =
-    'https://bikewise.org:443/api/v2/incidents?page=5&per_page=5&proximity=45.521728%2C-122.67326&proximity_square=100';
+    'https://bikewise.org:443/api/v2/incidents?page=10&per_page=10&proximity=45.521728%2C-122.67326&proximity_square=100';
 
   useEffect(() => {
     // eslint-disable-next-line no-undef
@@ -19,6 +23,13 @@ function BikeTracker() {
 
   const handleChange = (event) => {
     setInput(event.target.value);
+  };
+
+  const handleClick = (event) => {
+    const title = event.target.childNodes[0].data;
+    const bikeChosen = incidents.find((bike) => bike.title.includes(title));
+    setBikeClicked(bikeChosen);
+    setShowComponent(true);
   };
 
   // eslint-disable-next-line no-use-before-define
@@ -64,7 +75,11 @@ function BikeTracker() {
           <button type="submit">Insert Search Logo here</button>
         </form>
       </div>
-      <ul>{mapIncidentsToList()}</ul>
+      <ul onClick={handleClick}>{mapIncidentsToList()}</ul>
+
+      {showComponent === true ? (
+        <DisplayCertainBike bikeInfo={bikeClicked} />
+      ) : null}
     </section>
   );
 }
