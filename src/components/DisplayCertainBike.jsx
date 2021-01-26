@@ -1,20 +1,25 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function DisplayCertainBike(props) {
+function DisplayCertainBike({ bikeClicked }) {
   return (
     <section>
       <div>
-        <img src={props.bikeInfo.media.image_url} alt="" />
+        <img src={bikeClicked.media.image_url} alt="" />
       </div>
       <div>
-        <span>{props.bikeInfo.title}</span>
-        <span>{props.bikeInfo.address}</span>
-        <span>{props.bikeInfo.description}</span>
+        <span>{bikeClicked.title}</span>
+        <span>{bikeClicked.address}</span>
+        <span>{bikeClicked.description}</span>
       </div>
     </section>
   );
 }
 
 export default DisplayCertainBike;
+
+DisplayCertainBike.propTypes = {
+  bikeClicked: PropTypes.shape({}).isRequired,
+};
