@@ -78,7 +78,7 @@ function BikeTracker() {
       <ul onClick={handleClick}>{mapIncidentsToList()}</ul>
 
       {showComponent === true ? (
-        <DisplayCertainBike bikeInfo={bikeClicked} />
+        <DisplayCertainBike bikeClicked={bikeClicked} />
       ) : null}
     </section>
   );
